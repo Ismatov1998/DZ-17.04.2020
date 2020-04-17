@@ -1,0 +1,13 @@
+C:\LI\FD\bin\Debug\netcoreapp3.1\FD.exe
+C:\LI\FD\bin\Debug\netcoreapp3.1\FD.deps.json
+C:\LI\FD\bin\Debug\netcoreapp3.1\FD.runtimeconfig.json
+C:\LI\FD\bin\Debug\netcoreapp3.1\FD.runtimeconfig.dev.json
+C:\LI\FD\bin\Debug\netcoreapp3.1\FD.dll
+C:\LI\FD\bin\Debug\netcoreapp3.1\FD.pdb
+C:\LI\FD\obj\Debug\netcoreapp3.1\FD.csprojAssemblyReference.cache
+C:\LI\FD\obj\Debug\netcoreapp3.1\FD.csproj.CoreCompileInputs.cache
+C:\LI\FD\obj\Debug\netcoreapp3.1\FD.AssemblyInfoInputs.cache
+C:\LI\FD\obj\Debug\netcoreapp3.1\FD.AssemblyInfo.cs
+C:\LI\FD\obj\Debug\netcoreapp3.1\FD.dll
+C:\LI\FD\obj\Debug\netcoreapp3.1\FD.pdb
+C:\LI\FD\obj\Debug\netcoreapp3.1\FD.genruntimeconfig.cache
