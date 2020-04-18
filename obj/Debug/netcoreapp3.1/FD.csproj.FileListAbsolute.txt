@@ -11,3 +11,16 @@ C:\LI\FD\obj\Debug\netcoreapp3.1\FD.AssemblyInfo.cs
 C:\LI\FD\obj\Debug\netcoreapp3.1\FD.dll
 C:\LI\FD\obj\Debug\netcoreapp3.1\FD.pdb
 C:\LI\FD\obj\Debug\netcoreapp3.1\FD.genruntimeconfig.cache
+C:\kd\DZ-17.04.2020\bin\Debug\netcoreapp3.1\FD.exe
+C:\kd\DZ-17.04.2020\bin\Debug\netcoreapp3.1\FD.deps.json
+C:\kd\DZ-17.04.2020\bin\Debug\netcoreapp3.1\FD.runtimeconfig.json
+C:\kd\DZ-17.04.2020\bin\Debug\netcoreapp3.1\FD.runtimeconfig.dev.json
+C:\kd\DZ-17.04.2020\bin\Debug\netcoreapp3.1\FD.dll
+C:\kd\DZ-17.04.2020\bin\Debug\netcoreapp3.1\FD.pdb
+C:\kd\DZ-17.04.2020\obj\Debug\netcoreapp3.1\FD.csprojAssemblyReference.cache
+C:\kd\DZ-17.04.2020\obj\Debug\netcoreapp3.1\FD.csproj.CoreCompileInputs.cache
+C:\kd\DZ-17.04.2020\obj\Debug\netcoreapp3.1\FD.AssemblyInfoInputs.cache
+C:\kd\DZ-17.04.2020\obj\Debug\netcoreapp3.1\FD.AssemblyInfo.cs
+C:\kd\DZ-17.04.2020\obj\Debug\netcoreapp3.1\FD.dll
+C:\kd\DZ-17.04.2020\obj\Debug\netcoreapp3.1\FD.pdb
+C:\kd\DZ-17.04.2020\obj\Debug\netcoreapp3.1\FD.genruntimeconfig.cache

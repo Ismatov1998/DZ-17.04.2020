@@ -30,15 +30,32 @@ namespace Fg
          ArrayHelper<int>.getinfo(a3);
        
         int[] a4=new int[10]{1,2,3,4,5,6,7,8,9,10}; 
-
+        int n3,n4;
         Console.WriteLine("Введите значения Beginindex");
-        string n1=Console.ReadLine();   
+        string n1=Console.ReadLine();
+        if(string.IsNullOrWhiteSpace(n1))
+        {
+         n3=0;
+        }
+        else 
+        {
+          n3=Convert.ToInt32(n1);
+        }
         Console.WriteLine("Введите значения endindex");
-        string n2=Console.ReadLine();   
-        
-         //ArrayHelper<int>.Slice( a3,n1,n2 );
-         Console.WriteLine("Массив после выполнения функции Slice()");
-         ArrayHelper<int>.getinfo(ArrayHelper<int>.Slice( a4,n1,n2 ));
+        string  n2=(Console.ReadLine());   
+        if(string.IsNullOrWhiteSpace(n2))
+        {
+          n4=0;
+        }
+        else 
+        {
+          n4=Convert.ToInt32(n2);
+        }
+        // Console.WriteLine($"{n3} {n4}");
+        //ArrayHelper<int>.Slice( a3,n1,n2 );
+        Console.WriteLine("Массив после выполнения функции Slice()");
+
+         ArrayHelper<int>.getinfo(ArrayHelper<int>.Slice( a4,n3,n4 ));
                                                      
            
       }
@@ -86,6 +103,7 @@ namespace Fg
       {
         T b=a[a.Length-1];
         Array.Reverse(a);
+
         Array.Resize(ref a, a.Length-1);
         Array.Reverse(a);
         return b;
@@ -100,101 +118,73 @@ namespace Fg
         return a.Length;
       }
 
-      public static T[] Slice(T[] a,string beginindex, string endindex)
+      public static T[] Slice(T[] a, int beginindex, int endindex)
       {
-        T[] a1=new T[a.Length];
-        int t=0;
-        if(string.IsNullOrWhiteSpace(beginindex)==false && string.IsNullOrWhiteSpace(endindex)==false && Convert.ToInt32(endindex)>0 && Convert.ToInt32(beginindex)>0)
-        {
-         int n1=Int32.Parse(beginindex);
-         int n2=Int32.Parse(endindex);
-         
-        
-         if( n1<n2 && n1<a.Length)   
-         {
-          Array.Resize(ref a1,n2-n1-1);
-          if(n2>=a.Length)
-          {
-            Array.Resize(ref a1,a.Length-n1-1);
-            for(int i=n1;i<a.Length-1;i++)
-          {
-            a1[t]=a[i];
-            t++;
-          }
-           return a1;
 
-          }
-          else{
-          for(int i=n1;i<n2-1;i++)
-          {
-            a1[t]=a[i];
-            t++;
-          }
-           return a1;
+        int t=0;
+        T[] a1=new T[a.Length];
+
+        if(beginindex > a.Length)
+        {
+          return a1;
         }
-         }
-        }
-        
-         
-         
-        if(string.IsNullOrWhiteSpace(beginindex)==true && Convert.ToInt32(endindex)> 0  )
-         {
-           
-          int n3=Int32.Parse(endindex);
-          
-          Array.Resize(ref a1,n3);
-          if(n3 < a.Length)
+
+        if(beginindex<0 && endindex==0)
+        {
+          Array.Resize(ref a1,-beginindex);
+          for(int i=a.Length+beginindex;i<a.Length;i++)
           {
-           for(int i=0;i<n3;i++)
-           {
             a1[t]=a[i];
             t++;
-           }
-           
-          }
-           return a1;
-         }
-         
-         if(string.IsNullOrWhiteSpace(endindex)==true && Convert.ToInt32(beginindex)> 0)
-         {
-           
-          int n4=Int32.Parse(beginindex);
-          Array.Resize(ref a1,a.Length-n4);
-          if(n4 < a.Length)
-          {
-           for(int i=n4;i<a.Length;i++)
-           {
-            a1[t]=a[i];
-            t++;
-           }
           }
           return a1;
-         }
-         if(Convert.ToInt32(beginindex)>0 && Convert.ToInt32(endindex)< 0 )
-         {
-           Array.Resize(ref a1,a.Length-Convert.ToInt32(beginindex)+Convert.ToInt32(endindex));       
-           for(int i=Convert.ToInt32(beginindex);i<a.Length+Convert.ToInt32(endindex);i++)
-           {
-               a1[t]=a[i];
-               t++;
-           }
-       
-         }
-         if(Convert.ToInt32(beginindex)<0)
-         {
-             Array.Resize(ref a1,-Convert.ToInt32(beginindex));
-             for(int i=a.Length+Convert.ToInt32(beginindex);i<a.Length;i++)
-             {
-                a1[t]=a[i];
-                t++;
-             }
-             
-         }
-        
-        
-         return a1;
+        }
+        if(beginindex==0 && endindex>0)
+        {
+          Array.Resize(ref a1,endindex-1);
+          for(int i=0;i<endindex-1;i++)
+          {
+            a1[t]=a[i];
+            t++;
+          }
+          return a1;
+        }
+        if(beginindex>=0 && endindex==0)
+        {
+          Array.Resize(ref a1,a.Length-beginindex);
+          for(int i=beginindex;i<a.Length;i++)
+          {
+            a1[t]=a[i];
+            t++;
+          }
+          return a1;
+        }
 
-         }
+
+        if(beginindex>=0 && endindex>=0 && beginindex<endindex)
+        {
+         Array.Resize(ref a1,endindex-beginindex);
+          for(int i=beginindex;i<endindex;i++)
+          {
+            a1[t]=a[i];
+            t++;
+          }
+          return a1;/////1 2 3 4 5 6 7 8 9 10
+        }
+        
+        if(beginindex>=0 && endindex<0)
+        {
+          Array.Resize(ref a1,a.Length-beginindex+endindex);
+          for(int i=beginindex;i<a.Length+endindex;i++)
+          {
+            a1[t]=a[i];
+            t++;
+          }
+          return a1;
+          
+        }
+        return a1;
+      }
         
         
       
